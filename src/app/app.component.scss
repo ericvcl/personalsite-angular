@@ -376,6 +376,15 @@ span.desmos:hover {
     padding-left: 0px;
 }
 
+::ng-deep .card {
+    border-radius: 0px;
+}
+
+::ng-deep .card-img {
+    border-radius: 0px;
+}
+
+
 
 .cardimg {
     opacity: 1;
@@ -464,6 +473,10 @@ span.desmos:hover {
 
 /* media queries */
 @media (max-width: 576px) {
+    .intro {
+        text-align: center;
+    }
+
     .intro-header {
         text-align: left;
     }
@@ -474,6 +487,10 @@ span.desmos:hover {
 
     .intro-contact {
         text-align: center;
+    }
+
+    .sections {
+        padding: 0px 25px 0px 25px;
     }
 }
 
