@@ -1,0 +1,488 @@
+$bgColor_light: white;
+$bgColor_dark: #333333;
+
+$textColor_light: black;
+$textColor_dark: white;
+
+$borderColor_light: black;
+$borderColor_dark: white;
+
+@mixin lighten() {
+    --bgColor: #{$bgColor_light};
+    --textColor: #{$textColor_light};
+    --borderColor: #{$borderColor_light};
+}
+
+// mixin that enables css variables in dark mode
+@mixin darken() {
+    --bgColor: #{$bgColor_dark};
+    --textColor: #{$textColor_dark};
+    --borderColor: #{$borderColor_dark};
+}
+
+body.dark {
+    @include darken();
+}
+
+body.light {
+    @include lighten();
+}
+
+body.bg {
+    background-color: var(--bgColor);
+    transition: background-color 600ms;
+    animation: fadeIn 2s;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    margin: 0;
+}
+
+.sections {
+    padding: 0px 125px 0px 125px;
+}
+
+.customNav {
+    border-bottom: 2px solid black;
+    background-color: white;
+    transition: background-color 600ms;
+}
+
+/* --- navLink --- */
+
+.navbar {
+    background-color: var(--bgColor);
+    transition: background-color 600ms;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom .75s;
+}
+
+.scroll {
+    border-bottom: 1px solid var(--textColor);
+    transition: border-bottom .75s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+input[type=checkbox] {
+    visibility: hidden;
+
+}
+
+.box {
+    margin-top: 3px;
+    width: 40px;
+    height: 10px;
+    background: gray;
+    position: relative;
+    border-radius: 3px;
+}
+
+.switch {
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transition: all .6s ease;
+    cursor: pointer;
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    background: #000000;
+
+}
+
+input[type=checkbox]:checked+label {
+    left: 27px;
+    background: #f7f7f7;
+
+}
+
+.navLink {
+    font-family: bely-display, sans-serif;
+    text-transform: lowercase;
+    font-weight: bolder;
+}
+
+.navLink:hover {
+    color: var(--textColor);
+}
+
+.navLink::before {
+    transform-origin: 100% 50%;
+    transform: scale3d(0, 1, 1);
+    transition: transform 0.3s;
+}
+
+.navLink:hover::before {
+    transform-origin: 0% 50%;
+    transform: scale3d(1, 1, 1);
+    color: var(--textColor);
+}
+
+.link {
+    cursor: pointer;
+    font-size: 18px;
+    position: relative;
+    white-space: nowrap;
+    color: var(--textColor);
+}
+
+.link::before,
+.link::after {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    top: 100%;
+    left: 0;
+    pointer-events: none;
+    color: var(--textColor);
+}
+
+.link::before {
+    content: '';
+    /* show by default */
+}
+
+/* ---brand--- */
+
+/* prevent underline on hover */
+a {
+    color: var(--textColor);
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color: var(--textColor);
+}
+
+a:active {
+    text-decoration: none;
+}
+
+
+.brand {
+    height: 30px;
+    align-items: center;
+    color: var(--textColor);
+    text-decoration: none;
+    display: flex;
+    font-weight: bold;
+}
+
+/* Hide extra text */
+.mask {
+    position: relative;
+    padding: 0;
+    height: 20px;
+
+    /*  Remove overflow to see how it works　:) */
+    overflow: hidden;
+}
+
+.link-container {
+    transition: transform 0.4s ease;
+}
+
+.title {
+    display: block;
+
+    /*  Set same font-size and line height  */
+    font-size: 20px;
+    line-height: 20px;
+
+    transition: transform 0.4s ease;
+}
+
+.link-title1 {
+    transform-origin: right center;
+}
+
+.link-title2 {
+    transform-origin: left center;
+    transform: rotate(20deg);
+}
+
+/* hover */
+
+.brand:hover .link-container {
+    transform: translateY(-20px);
+    color: var(--textColor);
+    ;
+}
+
+/* Rotate texts a little bit */
+.brand:hover .link-title1 {
+    transform: rotate(20deg);
+}
+
+.brand:hover .link-title2 {
+    transform: rotate(0);
+}
+
+/* Move arrows to right */
+.brand:hover .icon:first-child {
+    transform: translate(40px);
+}
+
+.brand:hover .icon:nth-child(2) {
+    transform: translate(0px);
+}
+
+/* intro section */
+
+.intro {
+    margin-top: 12rem;
+}
+
+.intro-header {
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--textColor);
+}
+
+.intro-para {
+    font-size: 20px;
+    color: var(--textColor);
+}
+
+/* google */
+
+span.google:hover>span {
+    color: Product Sans;
+    transition: color 0.5s ease-in;
+    cursor: pointer;
+}
+
+span.google:hover:not(:hover)>span {
+    color: var(--textColor);
+    transition: color 0.5s ease-out;
+}
+
+span.google:hover>span:first-child {
+    color: #4285F4;
+}
+
+span.google:hover>span:nth-child(2) {
+    color: #EA4335;
+}
+
+span.google:hover>span:nth-child(3) {
+    color: #FBBC05;
+}
+
+span.google:hover>span:nth-child(4) {
+    color: #4285F4;
+}
+
+span.google:hover>span:nth-child(5) {
+    color: #34A853;
+}
+
+span.google:hover>span:nth-child(6) {
+    color: #EA4335;
+}
+
+/* nordstrom */
+span.nordstrom:hover {
+    text-shadow:
+        -.2px -.2px 0 var(--textColor),
+        .2px -.2px 0 var(--textColor),
+        -.2px .2px 0 var(--textColor),
+        .2px .2px 0 var(--textColor);
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+    cursor: pointer;
+}
+
+/* desmos */
+span.desmos:hover {
+    color: #138845;
+    transition: color 0.5s ease-in;
+    cursor: pointer;
+}
+
+.link-1 {
+    display: inline-block;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    font-family: sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    color: var(--textColor);
+    position: relative;
+    transition: all .3s cubic-bezier(.2, 0, 0, 1);
+    z-index: 1;
+
+    &:after {
+        content: '';
+        display: block;
+        height: 1px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: var(--textColor);
+        transition: all .3s cubic-bezier(.2, 0, 0, 1);
+        transform-origin: bottom center;
+        z-index: -1;
+    }
+
+    &:hover {
+        color: var(--bgColor);
+
+        &:after {
+            right: 0;
+            left: 0;
+            height: 100%;
+        }
+    }
+}
+
+.projects {
+    margin-top: 6rem;
+}
+
+.project-cards {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+
+.cardimg {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.project-desc {
+    /*font-weight: bold;  */
+}
+
+.project-tech {
+    font-size: 12;
+}
+
+.overlay:hover .cardimg {
+    opacity: 0.3;
+}
+
+.overlay:hover .middle {
+    opacity: 1;
+}
+
+.text {
+    color: var(--bgColor);
+    font-size: 16px;
+    background-color: var(--textColor);
+
+}
+
+.project-header {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+/* modal */
+
+::ng-deep .modal-content {
+    border: none;
+    border-radius: 0px;
+    background-color: white;
+    color: black;
+}
+
+.modal-body {
+    background-color: white;
+}
+
+.experience-desc {
+    background-color: whitesmoke;
+    padding: 25px;
+}
+
+.exp-modal-title {
+    padding-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    font-size: 35;
+    font-weight: bold;
+}
+
+.exp-modal-sub {
+    margin-top: 0px;
+    padding-top: 0px;
+    padding-left: 0px;
+    margin-right: 0px;
+    font-size: 20;
+    font-weight: 500;
+    padding-bottom: 10px;
+}
+
+/* media queries */
+@media (max-width: 576px) {
+    .intro-header {
+        text-align: left;
+    }
+
+    .intro-para {
+        text-align: left;
+    }
+
+    .intro-contact {
+        text-align: center;
+    }
+}
+
+@media (min-height: 1200px) {
+    .intro {
+        margin-top: 22rem;
+    }
+
+    .projects {
+        margin-top: 18rem;
+    }
+}

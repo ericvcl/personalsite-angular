@@ -1,0 +1,203 @@
+<body class="bg light">
+  <nav [ngClass]="{ 'navbar navbar-expand-sm fixed-top': true, 'scroll': scrolled }">
+    <div class="container sections">
+      <a class="navbar-brand brand" href="#">
+        <span class="mask">
+          <div class="ml-3 link-container">
+            <span class="link-title1 title">eric latham II</span>
+            <span class="link-title2 title">eric latham II</span>
+          </div>
+        </span>
+      </a>
+      <div class="box">
+        <input id="checkbox" type="checkbox" (change)="changeThemeColor()">
+        <label class="switch" for="checkbox"></label>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav me-automb-2 mb-lg-0">
+          <li class="nav-item me-5 navLink link">
+            <a class="nav-link" href="https://www.linkedin.com/in/eric-vc-latham-ii/" target="_blank">LinkedIn</a>
+          </li>
+          <li class="nav-item navLink link">
+            <a class="nav-link" href="https://github.com/ericvcl" target="_blank">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container sections">
+    <div class="row">
+      <div class="col-6 intro">
+        <h1 class="intro-header"> Hey there, I'm Eric. </h1>
+        <p class="intro-para">
+          I'm a student at the University of Washington - Seattle majoring in informatics.
+          My primary focus is full-stack web development.
+          I'm currently interning at <span class="google" (click)="open(googleModal)">
+            <span>G</span>
+            <span>o</span>
+            <span>o</span>
+            <span>g</span>
+            <span>l</span>
+            <span>e</span>
+          </span> on the ads safety team. Previously, I've interned at <span class="nordstrom"
+            (click)="open(nordstromModal)">Nordstrom</span>
+          and <span class="desmos" (click)="open(desmosModal)">Desmos</span>.
+
+        </p>
+        <div><a class="link-1" href="mailto:ericvcl@uw.edu">
+            Contact Me
+          </a>
+        </div>
+      </div>
+      <div class="col-12 projects">
+        <h1 class="intro-header">Featured Projects.</h1>
+        <div class="container-fluid mt-4 project-cards">
+          <div class="row justify-content-center">
+            <div class="col-lg-6 col-sm-12 mb-3">
+              <a href="https://project-2-3f7ab.web.app/" target="_blank" rel="noreferrer noopener">
+                <div class="card overlay h-100">
+                  <div class="cardimg"><img class="card-img img-fluid" src="../assets/images/tome.png" alt="TomeTrade">
+                  </div>
+                  <div class="middle">
+                    <div class="text project-header">
+                      <div class="mr-1 ml-1 mb-1">TomeTrade</div>
+                    </div>
+                    <div class="text project-desc mb-1">
+                      <div class="mr-1 ml-1">Prototype website that allows users to trade used books</div>
+                    </div>
+                    <div class="text project-tech">HTML, CSS, React, Firebase</div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-6 col-sm-12 mb-3">
+              <a href="https://ericvcl.github.io/productivity/" target="_blank" rel="noreferrer noopener">
+                <div class="card overlay h-100">
+                  <div class="cardimg"><img class="card-img img-fluid" src="../assets/images/proefficiency.png"
+                      alt="Productivity app"></div>
+                  <div class="middle">
+                    <div class="text project-header">
+                      <div class="mr-1 ml-1 mb-1">ProEfficiency</div>
+                    </div>
+                    <div class="text project-desc mb-1">
+                      <div class="mr-1 ml-1">Productivity app with task management, pomodoro timer, and data persistence
+                        features</div>
+                    </div>
+                    <div class="text project-tech">HTML, CSS, React</div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-6 col-sm-12 mb-3">
+              <a href="https://vonomo.shinyapps.io/Info201-Final-Project/" target="_blank" rel="noreferrer noopener">
+                <div class="card overlay h-100">
+                  <div class="cardimg"><img class="card-img img-fluid" src="../assets/images/unem.png"
+                      alt="Unemployment Statistics"></div>
+                  <div class="middle">
+                    <div class="text project-header">
+                      <div class="mr-1 ml-1 mb-1">Unemployment Statistics Site</div>
+                    </div>
+                    <div class="text project-desc mb-1">
+                      <div class="mr-1 ml-1">Provides insight on how demographics are correlated with unemployment rates
+                        in all 50 US states</div>
+                    </div>
+                    <div class="text project-tech">HTML, CSS, R, Shiny</div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-6 col-sm-12 mb-3">
+              <a href="https://www.figma.com/proto/5Vgb4HSTd88ZbVcrswalPW/Dynamo-Prototype?node-id=13%3A4&scaling=scale-down&page-id=0%3A1"
+                target="_blank" rel="noreferrer noopener">
+                <div class="card overlay h-100">
+                  <div class="cardimg"><img class="card-img img-fluid" src="../assets/images/dynamo.png" alt="Dynamo">
+                  </div>
+                  <div class="middle">
+                    <div class="text project-header">
+                      <div class="mr-1 ml-1 mb-1">Dynamo</div>
+                    </div>
+                    <div class="text project-desc mb-1">
+                      <div class="mr-1 ml-1">Prototype app that aids in college students productivity</div>
+                    </div>
+                    <div class="text project-tech">Figma</div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<ng-template #googleModal let-modal>
+  <div class="modal-body modal-body-experiences">
+    <div class="container">
+      <div class="row">
+        <h5 class="col-6 exp-modal-title">Google</h5>
+        <div class="col-6 justify-content-end float-end">
+          <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"
+            (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="col-12 exp-modal-sub">
+          Ads Safety
+        </div>
+        <p class="experience-desc">
+          W.I.P. (Literally- my work at Google is currently in progress!)
+          All I can tell you for now is that I'm on the Ads Safety Team. 😃
+        </p>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #nordstromModal let-modal>
+  <div class="modal-body modal-body-experiences">
+    <div class="container">
+      <div class="row">
+        <h5 class="col-6 exp-modal-title">Nordstrom</h5>
+        <div class="col-6 justify-content-end float-end">
+          <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"
+            (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="col-12 exp-modal-sub">
+          Order Pickup Tool
+        </div>
+        <p class="experience-desc">
+          During my time with Nordstrom, I worked on the Order Pickup Tool team. My internship project involved
+          tagging employee-created merchandise orders. This work was done both in the order pickup application store
+          employees
+          use and in the printer service that is used to identify physical orders.
+        </p>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #desmosModal let-modal>
+  <div class="modal-body modal-body-experiences">
+    <div class="container">
+      <div class="row">
+        <h5 class="col-6 exp-modal-title">Desmos</h5>
+        <div class="col-6 justify-content-end float-end">
+          <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"
+            (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="col-12 exp-modal-sub">
+          Activity Builder Platform 
+        </div>
+        <p class="experience-desc">
+          While at Desmos, I worked on the Classroom team. During my internship, I revamped dashboard and activity
+          pages used 2,500+ teachers. This involved adding a feature to these pages that allows teachers to stop/start 
+          interactive lessons used by 100,000+ students (among many other things). Additionally, I revamped an internal admin dashboard, helped implement localization
+          features, and added the ability for teachers to view game states in a math guessing game similiar to "Guess Who."
+        </p>
+      </div>
+    </div>
+  </div>
+</ng-template>
