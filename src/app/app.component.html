@@ -32,7 +32,7 @@
   </nav> -->
   <div class="container sections">
     <div class="row">
-      <div class="col-6 intro">
+      <div [ngClass]="isMobile ? 'intro col-12' : 'intro col-6'" class="col-6 intro">
         <h1 class="intro-header"> Hey there, I'm Eric. </h1>
         <p class="intro-para">
           I'm a student at the University of Washington - Seattle majoring in informatics.

@@ -32,7 +32,7 @@ input[type=checkbox] {
 }
 
 .box {
-    margin-top: 3px;
+    margin-top: 2px;
     width: 40px;
     height: 10px;
     background: gray;
@@ -219,6 +219,10 @@ a:active {
 
     .sections {
         padding: 0px 25px 0px 25px;
+    }
+
+    .box {
+        margin-right: auto;
     }
 }
 

@@ -5,7 +5,6 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  //encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
 
@@ -16,16 +15,25 @@ export class AppComponent {
     this.modalService.open(modal, { centered: true, size: 'lg' })
   }
 
-  /*changeThemeColor(){
-    const body = document.getElementsByClassName('bg')[0]
-    body.classList.toggle("dark")
-    body.classList.toggle("light")
+  isMobile: boolean = false;
+  public innerWidth: any;
+  ngOnInit() {
+    this.innerWidth = window.innerWidth;
+    if (this.innerWidth <= 576) {
+      this.isMobile = true;
+    } else {
+      this.isMobile = false;
+    }
   }
 
-  scrolled: boolean = false;
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.innerWidth = window.innerWidth;
+    if (this.innerWidth <= 576) {
+      this.isMobile = true;
+    } else {
+      this.isMobile = false;
+    }
+  }
 
-  @HostListener("window:scroll", [])
-  onWindowScroll() {
-    this.scrolled = window.scrollY > 50;
-  }*/
 }
